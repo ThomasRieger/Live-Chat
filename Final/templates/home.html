@@ -1,16 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
-<form method="post" class="button">
-    <h3>Chat Room</h3>
-    <div>
-        <lable>Name:</lable>
-        <input type="text" name="name" value="{{name}}"/>
+<form method="post" class="box">
+    <h1>LIVE CHATTER</h1>
+    <div class="form-group">
+        <input type="text" placeholder="Enter Name" id="name" name="name" value="{{ name }}" class="form-control"/>
     </div>
-    <div class="join">
-        <input type="text" placeholder="Room Code" name="code" value="{{code}}"/>
-        <button type="submit" name="join">Join a Room</button>
-    </div>
-    <button type="submit" name="create" class="create-btn">Create a Room</button>
+    <div class="form-group join">
+        <input type="text" placeholder="Room Code" id="code" name="code" value="{{ code }}" class="form-control"/>
+        <button type="submit" name="join" class="button"><span>Join</span></button>
+    </div class="form-group create">
+    <button type="submit" name="create" class="create-btn"><span>Create a Room</span></button>
     {% if error %}
     <ul>
         <li>

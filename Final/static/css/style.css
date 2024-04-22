@@ -5,12 +5,43 @@
 }
 
 .button {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
+  display: inline-block;
+  border-radius: 8px;
+  background-color: white;
+  border: none;
+  color: black;
+  text-align: center;
+  font-size: 13px;
+  padding: 5px;
+  width: 60px;
+  transition: all 0.5s;
+  cursor: pointer;
 }
+
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -30px;
+    transition: 0.5s;
+  }
+  
+  .button:hover span {
+    padding-right: 15px;
+  }
+  
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
 
 .join {
     display: flex;
@@ -19,12 +50,45 @@
 }
 
 .create-btn {
+    display: inline-block;
+    border-radius: 8px;
     width: 100%;
-}
-
-.join-random-btn {
-    width: 100%;
-}
+    background-color: lightskyblue;
+    font-weight: bold;
+    border: none;
+    color: black;
+    text-align: center;
+    font-size: 13px;
+    padding: 5px;
+    transition: all 0.5s;
+    cursor: pointer;
+    gap: 10px;
+  }
+  
+  .create-btn span {
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+      transition: 0.5s;
+    }
+    
+    .create-btn span:after {
+      content: '\00bb';
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      right: -30px;
+      transition: 0.5s;
+    }
+    
+    .create-btn:hover span {
+      padding-right: 15px;
+    }
+    
+    .create-btn:hover span:after {
+      opacity: 1;
+      right: 0;
+    }
 
 .message-box {
     border-color: black;
@@ -76,3 +140,25 @@ h2 {
 .exit-btn {
     margin-left: 10px;
 }
+
+h1 {
+  font-family: Copperplate;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: inline-block;
+    margin-bottom: 5px;
+    width: 100px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+

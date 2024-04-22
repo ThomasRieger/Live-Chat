@@ -22,7 +22,6 @@ def generate_room(roomnum):
     return code
 
 # Redirect ไป home
-# Redirect ไป home
 @app.route("/",methods=["POST","GET"])
 def home():
     # ล้าง homepage ใหม่
@@ -34,7 +33,6 @@ def home():
         code = request.form.get("code")
         join = request.form.get("join",False) 
         create = request.form.get("create",False)
-        join_random = request.form.get("join_random",False)  # Get join_random button
         
         # เช็ค error
         if not name:
@@ -53,13 +51,6 @@ def home():
         elif code not in rooms:
             return render_template("home.html",error="Room does not exist",code=code,name=name)
         
-        # เข้าห้องแบบสุ่ม
-        if join_random != False:  # Check if join_random button is clicked
-            room = random.choice(list(rooms.keys()))  # Randomly select a room
-            session["room"] = room
-            session["name"] = name
-            return redirect(url_for("room"))
-
         # เก็บค่าของผู้ใช้ชั่วคราว
         session["room"] = room
         session["name"] = name
@@ -67,7 +58,6 @@ def home():
         return redirect(url_for("room"))
 
     return render_template("home.html")
-
 
 # Redirect ไป room
 @app.route("/room")
